@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Be My Valentine ❤️</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff4e8a, #ff85a2);
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-top: 100px;
+            font-size: 40px;
+        }
+
+        .buttons {
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        #yes {
+            background: white;
+            color: #ff4e8a;
+        }
+
+        #no {
+            background: black;
+            color: white;
+            position: absolute;
+        }
+
+        .heart {
+            position: fixed;
+            color: red;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh); }
+            100% { transform: translateY(-10vh); }
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Will You Be My Valentine? 💖</h1>
+
+<div class="buttons">
+    <button id="yes" onclick="love()">YES 💖</button>
+    <button id="no" onmouseover="moveButton()">NO 😢</button>
+</div>
+
+<script>
+    function love() {
+        alert("Yayyy 😍 I Love You Forever ❤️");
+        for (let i = 0; i < 20; i++) {
+            let heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.className = "heart";
+            heart.style.left = Math.random() * 100 + "vw";
+            document.body.appendChild(heart);
+        }
+    }
+
+    function moveButton() {
+        let button = document.getElementById("no");
+        button.style.top = Math.random() * 80 + "vh";
+        button.style.left = Math.random() * 80 + "vw";
+    }
+</script>
+
+</body>
+</html>
